@@ -3,9 +3,6 @@ import { modalAlert1, logPerson} from "./alertas.js";
 
 let validator = new Validate;
 
-
-const mailLog = document.getElementById("logMail")
-const passLog = document.getElementById("logPass")
 const formLog = document.getElementById("logForm")
 const btnEnviar1 = document.getElementById("btnEnviar1")
 

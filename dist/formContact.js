@@ -1,22 +1,21 @@
 import { Validate } from "./validaciones.js"
-import { modalAlert2, commisSoli} from "./alertas.js";
+import { modalAlert3, contactSoli} from "./alertas.js";
 
 let validator = new Validate;
 
 
-const commisForm = document.getElementById("commisForm")
-const fileCommis = document.getElementById("uploadFiles")
-const btnEnviar1 = document.getElementById("btn_commis")
+const contactForm = document.getElementById("form")
+const btnEnviar1 = document.getElementById("btnEnviar")
 
 const objectValid1 = {
     nameObject: false,
+    lnameObject: false,
     mailObject: false,
     msnObject: false,
-    fileObject: true
 
 };
 
-commisForm.addEventListener('change', function(event){
+contactForm.addEventListener('change', function(event){
     const inputId = event.target.id;
     console.log(inputId);
     const inputValue = event.target.value;
@@ -32,48 +31,44 @@ commisForm.addEventListener('change', function(event){
         inputClass.remove("is-valid");
     }
     switch(inputId){
-        case "nameForm":
+        case "name":
             objectValid1.nameObject = validator.validName(inputValue);    
             objectValid1.nameObject ? validClass() : invalidClass();
             console.log(Object.values(objectValid1));
             
             break;
 
-        case "emailForm":
+        case "lastName":
+            objectValid1.lnameObject = validator.validName(inputValue);    
+            objectValid1.lnameObject ? validClass() : invalidClass();
+            console.log(Object.values(objectValid1));
+            break;
+        case "mail":
             objectValid1.mailObject = validator.validMail(inputValue);    
             objectValid1.mailObject ? validClass() : invalidClass();
             console.log(Object.values(objectValid1));
             break;
-         case "textAreaForm":
+        case "contactMsn":
             objectValid1.msnObject = validator.validMsn(inputValue);    
             objectValid1.msnObject ? validClass() : invalidClass();
             console.log(Object.values(objectValid1));
             break;
-         case "uploadFiles":
-            if(fileCommis.value == null){
-                objectValid1.fileObject = false
-                
-            } else{
-                objectValid1.fileObject = true
-            }
-            console.log(Object.values(objectValid1));
-            break;
+        
         }
 });
 
 btnEnviar1.addEventListener('click', (e) =>{
     e.preventDefault();
-    const nameCommis = document.getElementById('nameForm').value;
-    const mailCommis = document.getElementById('emailForm').value;
-    const msnCommis = document.getElementById('textAreaForm').value;
-    const fileCommis = document.getElementById('uploadFiles').value;
+    const nameContact = document.getElementById('name').value;
+    const lnameContact = document.getElementById('lastName').value;
+    const mailContact = document.getElementById('mail').value;
+    const msnContact = document.getElementById('contactMsn').value;
 
 
     if(validator.validForm(objectValid1) === -1) {
-        commisSoli(nameCommis, mailCommis, msnCommis, fileCommis);
-        commisForm.reset();
+        contactSoli(nameContact, lnameContact, mailContact, msnContact);
+        contactForm.reset();
         }else{
-        modalAlert2("Blank spaces, please check again");
+            modalAlert3("Blank spaces, please check again");
     }
 })  
-

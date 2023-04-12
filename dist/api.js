@@ -1,4 +1,3 @@
-
 const $form = document.querySelector("#form");
 
 $form.addEventListener("submit",handleSubmit)
@@ -14,9 +13,4 @@ $form.addEventListener("submit",handleSubmit)
         }
     })
 
-    if (response.ok) {
-        this.reset()
-        alert("Gracias por contactarme, me comunicaré contigo lo más pronto posible")
-    }
-    
-}
+ }

@@ -22,17 +22,32 @@ const logPerson = (maila, passa) =>{
     modalAlert1(text1, "aceptar")  
 
 }
-const commisSoli = (mailc, passc) =>{
+const commisSoli = (namec, mailc, msnc, filec ) =>{
     let personLog = {
+        cname: namec,
         cmail: mailc,
-        cpass: passc
+        cmsn: msnc,
+        cfile: filec
+
     }
-    let text1 =`User Found ${commisSoli.cmail}`
-    modalAlert2(text1, "aceptar")  
+    let text2 =`Your petition has been succesfully send`
+    modalAlert2(text2, "aceptar")  
+
+}
+const contactSoli = (nameC, lnameC, mailC, msnC ) =>{
+    let personLog = {
+        Cname: nameC,
+        Clname: lnameC,
+        Cmail: mailC,
+        Cmsn: msnC
+       
+
+    }
+    let text3 =`Your message has been succesfully send`
+    modalAlert2(text3, "aceptar")  
 
 }
    
-
     function modalAlert(cadena, tipo){
 
         const alerta = document.createElement("div");
@@ -74,7 +89,6 @@ const commisSoli = (mailc, passc) =>{
             }
         
         }
-      
       
     }
     function modalAlert1(cadena, tipo){
@@ -119,7 +133,6 @@ const commisSoli = (mailc, passc) =>{
         
         }
       
-      
     }
     function modalAlert2(cadena, tipo){
 
@@ -133,29 +146,64 @@ const commisSoli = (mailc, passc) =>{
         texto.innerHTML = `<strong>${cadena}</strong>`
         btnCerrar.setAttribute("type", "button");
         btnCerrar.setAttribute("class", "btnAlerta");
-        btnCerrar.setAttribute("value", "Cerrar");
+        btnCerrar.setAttribute("value", "Close");
     
         alerta.appendChild(texto);
-        alerta.appendChild(btnCerrar);
+      
         
         if (tipo === "aceptar") {
             const btnAceptar = document.createElement("input");
             btnAceptar.setAttribute("type", "button");
             btnAceptar.setAttribute("class", "btnAlerta");
-            btnAceptar.setAttribute("value", "Enviar");
-            btnAceptar.setAttribute("hrf", "Enviar");
+            btnAceptar.setAttribute("value", "Accept");
+            btnAceptar.setAttribute("hrf", "Accept");
             alerta.appendChild(btnAceptar);
             document.body.appendChild(alerta);
             btnAceptar.onclick = function(){
-                location.href = "../../index.html"
                 document.getElementById("alerta").remove();
             }
+ 
+        }else{
+            alerta.appendChild(btnCerrar);
+            document.body.appendChild(alerta);
             btnCerrar.onclick = function(){
                 document.getElementById("alerta").remove();
             }
-            
         
+        }  
+      
+    }
+    function modalAlert3(cadena, tipo){
+
+        const alerta = document.createElement("div");
+        const texto = document.createElement("p");
+        const btnCerrar = document.createElement("input");
+    
+        alerta.setAttribute("id", "alerta")
+        alerta.setAttribute("class", "alerta");
+        texto.setAttribute("class", "textAlerta");
+        texto.innerHTML = `<strong>${cadena}</strong>`
+        btnCerrar.setAttribute("type", "button");
+        btnCerrar.setAttribute("class", "btnAlerta");
+        btnCerrar.setAttribute("value", "Close");
+    
+        alerta.appendChild(texto);
+      
+        
+        if (tipo === "aceptar") {
+            const btnAceptar = document.createElement("input");
+            btnAceptar.setAttribute("type", "button");
+            btnAceptar.setAttribute("class", "btnAlerta");
+            btnAceptar.setAttribute("value", "Accept");
+            btnAceptar.setAttribute("hrf", "Accept");
+            alerta.appendChild(btnAceptar);
+            document.body.appendChild(alerta);
+            btnAceptar.onclick = function(){
+                document.getElementById("alerta").remove();
+            }
+ 
         }else{
+            alerta.appendChild(btnCerrar);
             document.body.appendChild(alerta);
             btnCerrar.onclick = function(){
                 document.getElementById("alerta").remove();
@@ -163,6 +211,5 @@ const commisSoli = (mailc, passc) =>{
         
         }
       
-      
     }
-  export{addPerson, logPerson, modalAlert, modalAlert1}
+  export{addPerson, logPerson, commisSoli, modalAlert, modalAlert1, modalAlert2, contactSoli, modalAlert3}

@@ -1,4 +1,3 @@
-
 const slider = document.querySelector(".slider");
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
@@ -37,24 +36,3 @@ prevBtn.addEventListener("click", ()=>{
   slides[slideNum].classList.add("active");
 
 });
-
-var playSlider;
-
-var repeater = () => {
-  playSlider = setInterval(function(){
-    slides.forEach((slide) => {
-      slide.classList.remove("active");
-    });
-    
-    slideNum++;
-
-    if(slideNum > (numSlides - 1)){
-      slideNum = 0;
-    }
-
-    slides[slideNum].classList.add("active");
-  }, 4000);
-}
-
-repeater();
-

@@ -12,9 +12,9 @@ const btnEnviar = document.getElementById("btnEnviar")
 const mailLog = document.getElementById("mail")
 console.log(mailLog);
 const form = document.getElementById("formSign")
-const formLog = document.getElementById("logForm")
+
 const terms = document.getElementById("checkBox")
-const btnEnviar1 = document.getElementById("btnEnviar1")
+
 const objectValid = {
     nameObject: false,
     teleObject: false,
@@ -27,12 +27,7 @@ const objectValid = {
 
 };
 
-const objectValid1 = {
-    mailObject: false,
-    passObject: false,
 
-
-};
 
 
 form.addEventListener('change', function(event){
@@ -127,4 +122,3 @@ btnEnviar.addEventListener('click', (e) =>{
         modalAlert("Error, revise los datos");
     }
 })
-

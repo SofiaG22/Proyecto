@@ -546,7 +546,6 @@
 .datos{
     width: 100%;
     margin-top: 10px;
-    margin-bottom: 10px;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 100%;
@@ -555,6 +554,8 @@
 .imgContac{
     grid-column: 1;
     margin: 1% 5% 1% 5%;
+    justify-self: center;
+    align-self: center;
 }
 .formContac{
     grid-column: 2;
@@ -567,6 +568,7 @@
     box-shadow: 0 5px 25px black;
     margin: auto;
     margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 .formulario label{
@@ -959,4 +961,40 @@
         flex-direction: column;
     }
 
+    .infoPag{
+        color: #222;
+        margin-top: 5%;
+        margin-left: 5%;
+        width: 40%;
+        text-align: left;
+    }
+    
+    .infoPag h2{
+        font-weight: 800;
+        font-size: 40px;
+        text-shadow: 5px 5px#c4c4c4;
+    }
+    
+    .infoPag p{
+        max-width: 68%;
+        font-size: 12px;
+    }
+    
+    .commiSec3{
+        display: grid;
+    }
+
+    .imgCommis{
+        display: none;
+    }
+
+    .portafolio h2{
+        font-size: 49px;
+       text-align: center;
+       text-shadow: 5px 5px #c4c4c4;
+    }
+
+    .buttons button{
+        width: 170px;
+    }
 }
