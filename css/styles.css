@@ -1,0 +1,931 @@
+/*
+#D1F2C2 ##D1F2C2 #A9D962 #F08EA7 #7EAED9
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.pagina{
+    overflow-x: hidden;
+    margin-top: 8vh;
+    align-content: center;
+}
+
+.headPag{
+    z-index: 1050;
+    width: 100%;
+    text-align: center;
+    background-color: #D1F2C2;
+    position: fixed;
+    top: 0px;
+    display: grid;
+    grid-template-columns: 30% 60% 10%; 
+    grid-template-rows: 8vh;
+    max-width: 100vw;
+    opacity: 0.8;
+}
+
+.h1{
+    width: 20%;
+    grid-column: 1;
+    align-self: center;
+    padding-left: 5%;
+}
+
+.h1 a {
+    color: #000000;
+}
+
+#burguer{
+    display: none;
+}
+
+.menu{
+    width: 70%;
+    grid-column: 2;
+    align-self: center;
+}
+
+.menuUl{
+    width: 100%;
+}
+
+.menuUlLi{
+    display: inline-block;
+    margin-left: 3%;
+}
+
+.menuUlLi a{
+    transition: color 0.4s;
+    color: black;
+    font-weight: bold;
+}
+
+.menuUlLi a:hover{
+    color: white;
+}
+
+.mobile{
+    display: none;
+}
+
+.log{
+    width: 70px;
+    height: 30px;
+    background-color: #8EBF5E;
+    grid-column: 3;
+    align-self: center;
+}
+
+.logIn{
+    list-style: none;
+    padding-top: 5%;
+}
+
+.logIn a{
+    color: black;
+    font-weight: bold;
+}
+
+.principal{
+    width: 100vw;
+}
+
+/*Slider*/
+
+.slider{
+    position: relative;
+    align-content: center;
+    background: #00000116;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.slider .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+}
+
+.slider .slide img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navegar{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slider:hover .navegar{
+    opacity: 1;  
+}
+
+.prev-btn{
+    z-index: 5;
+    font-size: 15px;
+    color: black;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    cursor: pointer;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.next-btn{
+    z-index: 5;
+    font-size: 15px;
+    font-weight: bolder;
+    color: black;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    cursor: pointer;
+    border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+/*Galeria*/
+
+.portafolio{
+    background-color: #8EBF5E;
+}
+
+.portafolio h2{
+    font-size: 70px;
+   text-align: center;
+   text-shadow: 5px 5px #c4c4c4;
+   
+}
+
+.buttons{
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.buttons button{
+    margin: 1em;
+    padding: 0.3%;
+    font-size: 1.2em;
+    border: none;
+    background-color: #71a03f;
+    border-radius: 0.2em;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+}
+
+.buttons button:hover, button.active{
+    background: #D1F2C2;
+    color: black;
+    border: solid 1px #402319;
+    transition: 0.5s ease;
+}  
+
+.imagen{
+    max-width: 100vw;
+    scale: 0.9;
+    width: 90%;
+}
+
+.galeria{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.galeria img{
+    max-width: 400px;
+    padding: 0;
+    margin: 1rem;
+    transition: 0.6s;
+    box-shadow: 0 5px 25px black;
+    object-fit: cover;
+}
+
+/*comisiones*/
+
+.commi{
+    background-color: #8EBF5E;
+    align-content: center;
+}
+
+.commi h2{
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 5px 5px #c4c4c4;
+}
+
+.commiDesc{
+   text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.commiBody{
+    margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+.commiSec1, .commiSec2, .commiSec3{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 50% 50%;
+    background-color: #A9D962;
+    margin: 10px 30px 10px 30px;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.commiSec1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.commiSec2{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.commiSec3{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.imgCommis{
+    max-width: 300px;
+    max-height: 330px;
+}
+
+.commiTxt{
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    max-width: 51ch;
+}
+
+.commiSec1:hover, .commiSec2:hover, .commiSec3:hover {
+    background-color: #71a03f;
+    transition: 0.6s ease;
+}
+
+.btn_buy{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 7px;
+    background-color: #D1F2C2; 
+}
+
+.btn_buy:hover{
+    background-color: #4285F4;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#fondoVentanaModal{
+    background-color: black;
+    opacity: 0.7;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    z-index: 1000;
+}
+
+.modalCommisH{
+    text-align: center;
+    font-size: 2vw;
+}
+
+.modalCommis{
+    margin:0 35vw;
+    position: fixed;
+    top:-200vh;
+    background-color: #8ebf5e;
+    width: 30vw;
+    height: max-content;
+    z-index: 1100 ;
+    border-radius: 5%;
+    text-align: center;
+    border: 5px solid  #71a03f ;
+
+}
+
+.formModalCommis{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 5% 5%;
+    
+}
+
+.formModalCommis > b, label{
+   margin-left: 2%;
+    margin-top: 0.5%;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+}
+
+.formModalCommis > input{
+    width: 99%;
+    margin: 1% 1%;
+    padding: 1% 1% ;
+    background-color: #c4c4c4;
+    border: none;
+    font-weight:bold;
+    font-size: large;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid black;
+    align-content: center;
+    
+}
+
+.formModalCommis > button{
+    margin-top: 2%;
+    padding: 1% 0.1%;
+    font-size: small;
+    border-radius: 7px ;
+    background-color: #c4c4c4;
+
+}
+
+.formModalCommis > textarea{
+    height: 50px;
+    width: 100%;
+    resize: none;
+    background-color: #c4c4c4;
+
+    
+}
+
+.modalCommisSubmit{
+    width: 20%;
+    align-self: center;
+    color: #000000;
+    font-weight: bold;
+    font-size: 2vw;
+
+}
+
+.ModalCommisDivUpload{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+
+.formModalCommis input , textarea{
+    margin-top: 3%;
+    padding: 1px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+}
+
+.labelCheck{
+    display: inline;
+}
+
+.inputCheck{
+    display: inline;
+}
+
+.showFondo{
+    top: 0vh !important;
+}
+
+.showModalCommis{
+    top:10vh;
+}
+
+.fa-circle-xmark{
+    position: relative;
+    margin: 2% 2% 2% 0;
+    left: 42%;
+    font-size: 150%;
+    color:red;
+    background: white;
+    border-radius: 50%;
+}
+
+#uploadFiles{
+    display: block;
+}
+
+
+/*Donaciones*/
+
+.dono{
+    background-color: #8EBF5E;
+}
+
+.dono h2{
+    font-size: 60px;
+    text-align: center;
+    background-color: #71a03f;
+    text-shadow: 5px 5px #c4c4c4;
+}
+
+.donoBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+}
+
+.ImgDonations{
+    max-width: 100vw;
+}
+.sup{
+    background-color: #71a03f;
+    padding: 2% 18% 1% 18%;
+    margin-top: 2%;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.btn_donoss{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 10px;
+    background-color: #D1F2C2;
+}
+
+.btn_donoss:hover{
+    background-color: #4285F4;
+    cursor: pointer;
+}
+
+/*Sobre mi*/
+
+.about{
+    background-color: #8EBF5E;
+}
+
+.abtBody{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.about h2{
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 5px 5px #c4c4c4;
+    background-color: #71a03f;
+}
+
+.texto{
+    width: 60%;
+    padding: 3%;
+    margin-right: 5%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.perfil{
+    padding: 3%;
+    text-align: center;
+}
+
+.about img{
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/*Contacto*/
+
+.contacto{
+    background-color: #8EBF5E;
+}
+
+.contacto h2{
+    font-size: 60px;
+    text-align: center;
+    display: block;
+    background-color: #71a03f;
+    text-shadow: 5px 5px #c4c4c4;
+}
+
+.contacto h3{
+    font-size: 30px;
+    text-align: center;
+}
+
+.datos{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-flex;
+}
+
+.datos section{    
+    width: 45%;
+    height: 200px;
+    margin-bottom: 300px;
+}
+
+.datos section > img{
+    width: 80%;
+    padding-left: 20%;
+    padding-top: 4px;
+    margin: 8% 0;
+}
+
+.formulario{
+    width: 100%;
+    background-color: #8EBF5E;
+    padding-top: 3%;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px black;
+    margin-top: 6%;
+}
+
+.formulario label{
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 20%;
+}
+
+.formulario input{
+    background-color: #D1F2C2;
+    display: block;  
+    width: 60%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    margin-left: 20%;
+}
+
+.formulario textarea{
+    background-color: #D1F2C2;
+    width: 60%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    margin-left: 20%;
+    resize: none;
+}
+
+.formulario button{
+    color: #000000;
+    margin-left:35%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    background-color: #D1F2C2;
+    padding: 2%;
+    border-radius: 15px;
+    padding-right: 10%;
+    padding-left: 10%;
+    border: 2px solid #000000;
+}
+
+/*Footer*/
+
+.piePag{
+    background-color: #D1F2C2;
+    width: 100vw;
+    max-width: 100vw;
+}
+
+.footerUl{
+    display: inline-block;
+    width: 100%;
+    text-align: center; 
+}
+
+.icons{
+    color: inherit;
+    font-size: 30px;
+    display: inline-block;
+    align-content: space-between;
+    margin: 20px;
+    transition: color 0.5s;   
+}
+.icons a{
+    color: #000000;
+}
+
+.icons:hover a{
+    color: white;
+    top: -5px;
+}
+
+.creditos{
+    justify-content: center;
+    align-items:center;
+}
+
+.copy{
+    text-align: center;
+}
+
+/*****ESTILOS LOG_IN****/
+.bodyLog{
+    background: #8EBF5E;
+    z-index: 0;
+    } 
+.logInText{
+    display: inline-block;
+    margin-bottom: 2%;
+}
+.logInSec{
+    padding: 3%;
+    width: 60%;
+    margin: 5% 0 0 20%;
+    align-content: center;
+    border-radius: 15px;
+    background-image: linear-gradient(to right bottom, #d1f2c2, #bfe5a9, #aed991, #9ecc78, #8ebf5e);
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 25px black;
+    }
+
+.logInForm{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logInForm > input{
+    width: 50%;
+    margin: 1% 25%;
+    padding: 1% 1% ;
+    background-color: #c4c4c4;
+    border: none;
+    font-weight:bold;
+    font-size: large;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid black;
+ }
+
+.logInForm > a, label{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5%;
+    text-align: center;
+    text-decoration: none;
+}
+    
+.logInForm > input::placeholder{
+    color: #0c0c0b7e;
+    font-weight:bold;
+    font-size: large;
+    text-decoration: none;
+    }
+
+.logInForm >button{
+    width: 50%;
+    margin: 2% 43%;
+    padding: 0.2%;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: larger;
+    border: none;
+    background-color: #c4c4c4;
+    border: 2px solid black;
+    }
+
+    /*****ESTILOS SIGN_IN****/
+.bodySign{
+    background: #8EBF5E;
+    z-index: 0;
+} 
+
+.signInText{
+    font-size: 30px;
+    display: inline-block;
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+
+.signInSec{
+    width: 60%;
+    margin: 5% 0 0 20%;
+    align-content: center;
+    border-radius: 15px;
+    background-color: #F4D03F;
+    background-image: linear-gradient(to right bottom, #d1f2c2, #bfe5a9, #aed991, #9ecc78, #8ebf5e);   
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 25px black;
+}
+
+.signInForm{
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            text-decoration: none;
+            align-items: center;
+            
+        }
+.signInForm > input{
+            width: 50%;
+            margin: 1% 25%;
+            padding: 1% 1% ;
+            background-color: #c4c4c4;
+            border: none;
+            font-weight:bold;
+            font-size: large;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 2px solid black;
+        
+        }
+.signInTerms{
+            margin-right: 14%;
+            margin-top: 0.5%;
+            text-decoration: underline;
+            font-size: large;
+    
+        }
+.signInForm > a ,label{
+            margin-right: 20%;
+            margin-top: 0.5%;
+            text-decoration: none;
+        }
+        
+.signInForm > input::placeholder{
+            color: #0c0c0b7e;
+            font-weight:bold;
+            font-size: large;
+            text-decoration: none;
+        
+        }
+        .signInForm >button{
+            width: 50%;
+            align-items: center;
+            padding: 0.2%;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: larger;
+            border: none;
+            background-color: #c4c4c4;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+    
+        /**********Validaciones**********/
+    
+        .is-valid{
+            border-bottom: 2px solid rgb(231, 255, 13) !important;
+        }
+        .is-invalid{
+            border-bottom: 2px solid red !important;
+        
+        }
+        .alerta{ 
+            width: 35%;
+            height: auto;
+            background: #71a03f;
+            position: fixed;
+            top: calc(100vh - 65%);
+            left: calc(100vw - 65%);
+            text-align: center;
+            background-image: radial-gradient(circle, #d1f2c2, #c5ecac, #bae695, #b1e07c, #a9d962);
+            padding: 5px;
+            margin: 1% -2%;
+            border-radius: 20px;
+            border: 2px solid black;
+        } 
+        
+        .textAlerta{
+            width: 100%;
+            margin-top: 12%;
+            margin-bottom: 10%;
+            color: black;
+            font-size: 30px;
+        }
+             
+        .btnAlerta{
+            width: 40%;
+            height: auto;
+            margin-right: 1% ;
+            margin-bottom: 3%;
+            background: #402319; 
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #F2F2F2;
+            padding: 2%; 
+        }
+        .btn_enviar, .btnCancelar{
+            width: 30%;
+            margin-top: 3%;
+            padding: 10px 20px;
+            background-color: rgb(214, 121, 202);
+            border-radius: 10px;
+            font-size: 20px;
+            border:2px solid black;
+            color: white;
+        }
+
+@media screen and (max-width: 950px){
+    .headPag{
+        grid-template-columns: 50% 50%;
+    }
+    #burguer{
+        grid-column: 2;
+        display: inline;
+        background-color: #A9D962;
+        border: none;
+        width: 10%;
+        justify-self: center;
+        height: 30%;
+        align-self: center;
+    }
+
+    .h1{
+        grid-column: 1;
+        font-size: 5vw;
+        align-self: center;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .log{
+        display: none;
+    }
+    
+    .mobile{
+        display: inline-block;
+        position: fixed;
+        top: 8vh;
+        width: 100vw;
+        height: 100vh;
+        background-color: #A9D962;
+        left: 100%;
+        transition: left 0.5s;
+    }
+    
+    .showMobile{
+        left: 0%;
+    }
+            
+    .slider{
+    max-width: 950px;
+    height: auto;
+    object-fit: cover;
+    }
+}
+
+
+@media screen and (max-width: 950px){
+    .slider{
+        width: 100vw;
+        min-height: 200px;
+    }
+    .slider .slide{
+        scale: 1;
+    }
+    .slider > div{
+        width: 100%;
+        height: 300px;
+    }
+
+    .commiSec3{
+        display: grid;
+    }
+
+    .imgCommis{
+        display: none;
+    }
+
+}
