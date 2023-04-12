@@ -136,6 +136,10 @@
     transition: opacity 1s ease;
 }
 
+#imgPrinc{
+    filter: blur(2px);
+}
+
 .slider:hover .navegar{
     opacity: 1;  
 }
@@ -161,6 +165,28 @@
     cursor: pointer;
     border-top-left-radius: 3px;
     border-top-left-radius: 3px;
+}
+
+.infoPag{
+    position: absolute;
+    color: #222;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding: 1%;
+    width: 70%;
+    text-align: left;
+}
+
+.infoPag h2{
+    font-weight: 800;
+    font-size: 50px;
+    text-shadow: 5px 5px#c4c4c4;
+}
+
+.infoPag p{
+    font-weight: bold;
+    font-size: 19px;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 /*Galeria*/
