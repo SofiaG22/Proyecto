@@ -19,7 +19,7 @@
 }
 
 .headPag{
-    z-index: 1050;
+    z-index: 900;
     width: 100%;
     text-align: center;
     background-color: #D1F2C2;
@@ -170,9 +170,9 @@
 }
 
 .portafolio h2{
-    font-size: 70px;
-   text-align: center;
-   text-shadow: 5px 5px #c4c4c4;
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 0.4vw 0.4vw #c4c4c4;
    
 }
 
@@ -232,9 +232,9 @@
 }
 
 .commi h2{
-    font-size: 60px;
+    font-size: 5vw;
     text-align: center;
-    text-shadow: 5px 5px #c4c4c4;
+    text-shadow: 0.4vw 0.4vw #c4c4c4;
 }
 
 .commiDesc{
@@ -245,8 +245,8 @@
 
 .commiBody{
     margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
 }
 
@@ -366,7 +366,6 @@
     border-radius: 8px;
     border: 2px solid black;
     align-content: center;
-    
 }
 
 .formModalCommis > button{
@@ -375,7 +374,6 @@
     font-size: small;
     border-radius: 7px ;
     background-color: #c4c4c4;
-
 }
 
 .formModalCommis > textarea{
@@ -383,8 +381,6 @@
     width: 100%;
     resize: none;
     background-color: #c4c4c4;
-
-    
 }
 
 .modalCommisSubmit{
@@ -447,10 +443,10 @@
 }
 
 .dono h2{
-    font-size: 60px;
+    font-size: 5vw;
     text-align: center;
     background-color: #71a03f;
-    text-shadow: 5px 5px #c4c4c4;
+    text-shadow: 0.4vw 0.4vw #c4c4c4;
 }
 
 .donoBody{
@@ -494,21 +490,21 @@
 }
 
 .abtBody{
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
 }
 
 .about h2{
-    font-size: 60px;
+    font-size: 5vw;
     text-align: center;
-    text-shadow: 5px 5px #c4c4c4;
+    text-shadow: 0.4vw 0.4vw #c4c4c4;
     background-color: #71a03f;
 }
 
-.texto{
-    width: 60%;
+.texto {
+    width: 90%;
     padding: 3%;
     margin-right: 5%;
     font-size: 25px;
@@ -521,10 +517,11 @@
     text-align: center;
 }
 
-.about img{
-    width: 40%;
+.abtBody img{
+    width: 30%;
     height: auto;
     border-radius: 50%;
+    margin: 5% 5% 5% 10%;
 }
 
 /*Contacto*/
@@ -534,11 +531,11 @@
 }
 
 .contacto h2{
-    font-size: 60px;
+    font-size: 5vw;
     text-align: center;
     display: block;
     background-color: #71a03f;
-    text-shadow: 5px 5px #c4c4c4;
+    text-shadow: 0.4vw 0.4vw #c4c4c4;
 }
 
 .contacto h3{
@@ -550,29 +547,26 @@
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
 }
 
-.datos section{    
-    width: 45%;
-    height: 200px;
-    margin-bottom: 300px;
+.imgContac{
+    grid-column: 1;
+    margin: 1% 5% 1% 5%;
 }
-
-.datos section > img{
-    width: 80%;
-    padding-left: 20%;
-    padding-top: 4px;
-    margin: 8% 0;
+.formContac{
+    grid-column: 2;
 }
 
 .formulario{
-    width: 100%;
+    width: 80%;
     background-color: #8EBF5E;
-    padding-top: 3%;
     border-radius: 20px;
     box-shadow: 0 5px 25px black;
-    margin-top: 6%;
+    margin: auto;
+    margin-bottom: 10%;
 }
 
 .formulario label{
@@ -865,7 +859,8 @@
         background-color: #A9D962;
         border: none;
         width: 10%;
-        justify-self: center;
+        justify-self: right;
+        margin-right: 10%;
         height: 30%;
         align-self: center;
     }
@@ -875,7 +870,20 @@
         font-size: 5vw;
         align-self: center;
     }
+    .ulNavMobile{
+        display: flex;
+        flex-direction: column;
+    }
 
+    .ulNavMobile a{
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .ulNavMobile li{
+        border-bottom: 1px solid black;
+        padding-top: 5px;
+    }
     .menu{
         display: none;
     }
@@ -898,17 +906,16 @@
     .showMobile{
         left: 0%;
     }
-            
-    .slider{
-    max-width: 950px;
-    height: auto;
-    object-fit: cover;
+    
+    .modalCommis{
+        width: 90vw;
+        margin-left: 5vw;
     }
-}
-
-
-@media screen and (max-width: 950px){
+    
     .slider{
+        max-width: 950px;
+        height: auto;
+        object-fit: cover;
         width: 100vw;
         min-height: 200px;
     }
@@ -920,12 +927,36 @@
         height: 300px;
     }
 
-    .commiSec3{
-        display: grid;
+    .imgCommis{
+        object-fit: contain;
     }
 
-    .imgCommis{
-        display: none;
+    .commiBody{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .commiSec1, .commiSec2, .commiSec3{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .h2{
+        font-size: 7vw !important;
+    } 
+    
+    .abtBody{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .abtBody img{
+        width: 40%;
+    }
+
+    .datos{
+        display: flex;
+        flex-direction: column;
     }
 
 }
